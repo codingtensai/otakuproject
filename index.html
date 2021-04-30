@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+  <html>
+  <script src="
+https://code.jquery.com/jquery-3.2.1.min.js
+"></script>
+    <head>
+    <meta charset="utf-8">
+    <title></title>
+      <style>
+      @font-face {
+    font-family: 'CookieRunOTF-Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Black00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+      @font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+      body{
+        margin:0;
+        font-family: 'NanumSquareRound';
+      }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          /* table-layout: auto; */
+          background-color: #F4B1B8;
+        }
+        td {
+          text-align: center;
+          padding: 5px;
+          color: #fff;
+        }
+        th {
+          font-size: 35px;
+          text-align: center;
+          color: #fff;
+          padding: 5%;
+          border-bottom: 1px solid white;
+        }
+        .round {
+          position: relative;
+        }
+
+        .round label {
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 50%;
+          cursor: pointer;
+          height: 28px;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 28px;
+        }
+
+        .round label:after {
+          border: 2px solid #fff;
+          border-top: none;
+          border-right: none;
+          content: "";
+          height: 6px;
+          left: 7px;
+          opacity: 0;
+          position: absolute;
+          top: 8px;
+          transform: rotate(-45deg);
+          width: 12px;
+        }
+
+        .round input[type="checkbox"] {
+          visibility: hidden;
+        }
+
+        .round input[type="checkbox"]:checked + label {
+          background-color: #66bb6a;
+          border-color: #66bb6a;
+        }
+
+        .round input[type="checkbox"]:checked + label:after {
+          opacity: 1;
+        }
+
+        .container {
+          margin: 0 auto;
+        }
+
+        .buttons {
+                margin: 10%;
+                text-align: center;
+            }
+
+            .btn-hover {
+                width: 200px;
+                font-size: 16px;
+                font-weight: 600;
+                color: #fff;
+                cursor: pointer;
+                margin: 20px;
+                height: 55px;
+                text-align:center;
+                border: none;
+                background-size: 300% 100%;
+
+                border-radius: 50px;
+                moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            .btn-hover:hover {
+                background-position: 100% 0;
+                moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            .btn-hover:focus {
+                outline: none;
+            }
+
+            .btn-hover.color-10 {
+                    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+                box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+            }
+            footer{
+              font-family: 'CookieRunOTF-Black';
+              background-color: #F4B1B8;
+              text-align: center;
+              padding-top: 3%;
+              color: #fff;
+            }
+      </style>
+    </head>
+    <body>
+      <table>
+        <tr>
+          <th colspan="2"> 🌸 자캐커뮤 성향 진단표 🌸
+          <br>
+          <br>
+        <div style="font-size: 15px;">해당되는 내용에만 체크해주세요.</div> </th>
+
+        </tr>
+
+        <div>
+          <tr>
+              <td style="padding-top:20px;"> 1. 나는 주로 시스템이 각 잡혀있고 스토리 라인이 촘촘하게 짜인 커뮤니티를 뛴다.</td>
+              <td>
+                  <div class="round">
+                    <input type="checkbox" id="checkbox1" name="S" />
+                    <label for="checkbox1"></label>
+                  </div>
+             </td>
+          </tr>
+          <tr>
+              <td style="padding-top:20px;"> 2. 세계관이 방대한 커뮤는 잘 안 가게 된다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox2" name="S" />
+                  <label for="checkbox2"></label>
+                </div>
+              </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 3. 전투, 영구상해, 부상, 사망 등의 키워드를 좋아한다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox3" name="S" />
+                  <label for="checkbox3"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 4. 커뮤에 스토리 진행이나 이벤트, 시스템 같은 것이 구체적이지 않아도 즐겁다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox4" name="S" />
+                  <label for="checkbox4"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px; padding-bottom:20px;"> 5. 사념대화, 메타발언,TRPG 드립, 세계관, 시대상에 벗어나는 드립 등이 싫다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox5" name="S" />
+                  <label for="checkbox5"></label>
+                </div>
+             </td>
+          </tr>
+        </div>
+
+        <div>
+          <tr style="border-top: 1px solid white;">
+              <td style="padding-top:20px;"> 1. 1.5차, 2차 지인제 커뮤를 뛰어야 마음이 편안하다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox11" name="G" />
+                  <label for="checkbox11"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 2. 총괄이 누군지 모르는 외부 커뮤니티에도 잘 갈 수 있다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox12" />
+                  <label for="checkbox12"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 3. 커뮤를 잘 뛰지 않았는데도 트친소를 해본 적 있다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox13" />
+                  <label for="checkbox13"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 4. 정말 마음에 들지 않는 이상은 연공을 잘 안 한다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox14" name="G" />
+                  <label for="checkbox14"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px; padding-bottom:20px;"> 5. 요즘은 커뮤를 뛰지 않고 지인들과 소소하게 캐 짜고 교류하는 것이 더 좋다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox15" name="G" />
+                  <label for="checkbox15"></label>
+                </div>
+             </td>
+          </tr>
+        </div>
+
+        <div>
+          <tr style="border-top: 1px solid white;">
+              <td style="padding-top:20px;"> 1. 커뮤 뛸 때 내 캐릭터 혹은 남의 캐릭터에 감정 이입을 하거나 스토리에 과몰입하는 편이다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox21" name="M" />
+                  <label for="checkbox21"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 2. 진영 대립 커뮤니티일 때, 내 캐릭터가 속한 진영이 꼭 이기지 않아도 괜찮다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox22"/>
+                  <label for="checkbox22"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 3. 관캐가 잘 안 생기는 편이다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox23"/>
+                  <label for="checkbox23"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 4. 커뮤를 뛰면 다른 캐릭터의 언행에 일희일비한다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox24" name="M" />
+                  <label for="checkbox24"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px; padding-bottom:20px;"> 5. 역극 답장을 1분 단위로 기다린 적이 있다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox25" name="M" />
+                  <label for="checkbox25"></label>
+                </div>
+             </td>
+          </tr>
+        </div>
+
+        <div>
+          <tr style="border-top: 1px solid white;">
+              <td style="padding-top:20px;"> 1. 자캐 혹은 자캐커플 커미션 넣는 것을 좋아한다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox31" name="D" />
+                  <label for="checkbox31"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 2. 그림 인장을 필수로 요구하는 커뮤를 갈 때는 인장을 직접 그리는 편이다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox32" />
+                  <label for="checkbox32"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 3. 자캐 혹은 자캐커플 굿즈 만드는 것을 좋아한다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox33" name="D" />
+                  <label for="checkbox33"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px;"> 4. 자캐커플이나 관계 페어로 넣고 싶은 커미션이 생겨서 폼켓팅에 도전해본 적이 있다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox34" name="D" />
+                  <label for="checkbox34"></label>
+                </div>
+             </td>
+          </tr>
+
+          <tr>
+              <td style="padding-top:20px; padding-bottom:20px;"> 5. 내 캐릭터나 관계캐로 TRPG, 게임 커스텀마이징 등을 하기 위해 돈을 쓴 적은 없다.</td>
+              <td>
+                <div class="round">
+                  <input type="checkbox" id="checkbox35" />
+                  <label for="checkbox35"></label>
+                </div>
+             </td>
+          </tr>
+        </div>
+
+      </table>
+
+      <table>
+        <tr>
+          <td style="padding-top:5%;">
+            <button type="button" name="button" onclick="fn_submit()" class="btn-hover color-10">제출하기</button>
+          </td>
+        </tr>
+      </table>
+      <footer>
+        MARA & QUABA
+      </footer>
+    </body>
+    <script>
+    function fn_submit(){
+    var S=$("input:checkbox[name=S]:checked").length;
+    var G=$("input:checkbox[name=G]:checked").length;
+    var M=$("input:checkbox[name=M]:checked").length;
+    var D=$("input:checkbox[name=D]:checked").length;
+
+    if(S>=3 && G>=3 && M>=3 && D>=3){
+      window.location.href = 'SGMD.html';
+    }
+    if(S>=3 && G>=3 && M>=3 && D < 3){
+      window.location.href = 'SGMJ.html';
+    }
+    if(S>=3 && G>=3 && M < 3 && D>=3){
+      window.location.href = 'SGND.html';
+    }
+    if(S>=3 && G < 3 && M>=3 && D>=3){
+      window.location.href = 'SBMD.html';
+    }
+    if(S < 3 && G>=3 && M>=3 && D>=3){
+      window.location.href = 'IGMD.html';
+    }
+    if(S>=3 && G>=3 && M < 3 && D < 3){
+      window.location.href = 'SGNJ.html';
+    }
+    if(S>=3 && G < 3 && M < 3 && D>=3){
+      window.location.href = 'SBND.html';
+    }
+    if(S < 3 && G < 3 && M>=3 && D>=3){
+      window.location.href = 'IBMD.html';
+    }
+    if(S>=3 && G < 3 && M < 3 && D < 3){
+      window.location.href = 'SBNJ.html';
+    }
+    if(S < 3 && G < 3 && M < 3 && D>=3){
+      window.location.href = 'IBND.html';
+    }
+    if(S < 3 && G < 3 && M < 3 && D < 3){
+      window.location.href = 'IBNJ.html';
+    }
+    if(S>=3 && G < 3 && M>=3 && D < 3){
+      window.location.href = 'SBMJ.html';
+    }
+    if(S < 3 && G>=3 && M>=3 && D < 3){
+      window.location.href = 'IGMJ.html';
+    }
+    if(S < 3 && G>=3 && M < 3 && D>=3){
+      window.location.href = 'IGND.html';
+    }
+    if(S < 3 && G>=3 && M < 3 && D < 3){
+      window.location.href = 'IGNJ.html';
+    }
+    if(S < 3 && G < 3 && M>=3 && D < 3){
+      window.location.href = 'IBMJ.html';
+    }
+    }
+
+    </script>
+
+  </html>

@@ -1,0 +1,54 @@
+/* 이건 스타일 시트임 */
+@font-face {
+font-family: 'CookieRunOTF-Black';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Black00.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'NanumSquareRound';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+body{
+  margin:0;
+  width: 100%;
+  border-collapse: collapse;
+  /* table-layout: auto; */
+  background-color: #F4B1B8;
+  font-family: 'NanumSquareRound';
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* table-layout: auto; */
+  background-color: #F4B1B8;
+}
+  td {
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+  }
+  th {
+    font-size: 35px;
+    text-align: center;
+    color: #fff;
+    padding: 5%;
+    border-bottom: 1px solid white;
+  }
+
+  footer {
+        font-family: 'CookieRunOTF-Black';
+        background-color: #F4B1B8;
+        text-align: center;
+        padding-top: 3%;
+        color: #fff;
+      }
+
+@media screen and (max-width: 768px) {
+      img {
+          width: 50%;
+          height: 50%;
+        }
+    }
